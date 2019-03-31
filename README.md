@@ -3,7 +3,7 @@
 # Extraction and characterization of craquelure patterns from images
 Supporting code to the publication [TBA](https://arxiv.org)
 
-Taking a skeletonized binary image as an input, given algorithm extracts undirected graph from cracks pattern, classifies nodes by topology onto X, Y, and O types, fits edges with polynomial, and exports comprehensive characteristic of a craquelure pattern. The latter can be used for forgery detection, origin examination, aging monitoring and damage identification.
+Taking a skeletonized binary image as an input, given algorithm extracts undirected graph from cracks pattern, classifies nodes by topology onto X, Y, and O types, fits edges with polynomial, and exports comprehensive characteristic of a craquelure pattern. The latter can be used for forgery detection, origin examination, aging monitoring, and damage identification.
 
 *Disclaimer*: The code is on the stage of development!
 
