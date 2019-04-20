@@ -20,7 +20,7 @@ Binarization of the crack images is very tricky and ungreatful process so we lea
 </br>
 
 *Please cite the paper if you find our algorithm useful or you just have a strong desire to cite something.*
-#### Good luck in your experiments.
+#### Good luck with your experiments.
 </br>
 
 ![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_graph.jpg)
