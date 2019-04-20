@@ -4,15 +4,17 @@ warning('off','all')
 list = dir('imgs/*.tif');
 list2 = dir('imgs/*.jpg');
 i = 1;
+
 skel = imread([list(i).folder '\' list(i).name]);
 image = imread([list2(i).folder '\' list2(i).name])/2;
+
 if size(skel,1) > size(skel,2); skel = imrotate(skel,90); end
 if size(image,1) > size(image,2); image = imrotate(image,90); end
 
 % ########### PARAMETERS #############
-order = 2;
+order = 3;
 minLenBranch = 20;
-minLenFit = 40;
+minLenFit = 10;
 borderDist = 20;
 minLenYY = 6;
 
@@ -59,7 +61,8 @@ hold on;
 
 for i=1:length(node) 
     % draw all connections of each node
-    for j=1:length(node(i).links)    
+    for j=1:length(node(i).links) 
+        forceLinear = 0;
         
         % define colors for links and branches 
         if(node(node(i).conn(j)).ep==1) && (node(node(i).conn(j)).bord==0)
@@ -85,24 +88,38 @@ for i=1:length(node)
 
         if length(y) > minLenFit
             % if edge is horizontal - fit y, vertical - fit x
-            if y(end)-y(1) > x(end) - x(1)
+            if abs(y(end)-y(1)) > abs(x(end) - x(1))
                 f = fit(y', x', poly{order}, 'Weights', we');
                 xx = linspace(y(1),y(end),100);
-                plot(xx+meanY,f(xx)+meanX,col,'LineWidth', 1)
+                [~,d2(node(i).links(j),:)] = differentiate(f, xx);
+                if abs(max(d2(node(i).links(j)))) < 1e3
+                    plot(xx+meanY,f(xx)+meanX,col,'LineWidth', 1)
+                else
+                    forceLinear = 1;
+                end
             else
                 f = fit(x', y', poly{order}, 'Weights', we');
                 xx = linspace(x(1),x(end),100);
-                plot(f(xx)+meanY,xx+meanX,col,'LineWidth', 1)
+                [~,d2(node(i).links(j),:)] = differentiate(f, xx);
+                if abs(max(d2(node(i).links(j)))) < 1e3
+                    plot(f(xx)+meanY,xx+meanX,col,'LineWidth', 1)
+                else
+                    forceLinear = 1;
+                end
             end
             % if needed:
             % coeff(node(i).links(j),:) = coeffvalues(f);
         else
+            forceLinear = 1;
+        end
+        
+        if forceLinear
             f = fit(x', y', poly{1}, 'Weights', we');
             xx = linspace(x(1),x(end),100);
+            d2(node(i).links(j),:) = zeros(1,100);
             plot(f(xx)+meanY,xx+meanX,col,'LineWidth', 1)
         end
-        [~,d2(node(i).links(j),:)] = differentiate(f, xx);
-        
+
         % to plot edges pixel-wise use
 %         for k=1:length(link2(node2(i).links(j)).point)-1            
 %             [x3,y3,z3]=ind2sub([w,l,h],link(node(i).links(j)).point(k));
