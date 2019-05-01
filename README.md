@@ -1,4 +1,4 @@
-![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_preview.jpg)
+![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/readme_imgs/img_preview.jpg)
 
 Supporting code to the publication [“The cracks that wanted to be a graph”: application of image processing and Graph Neural Networks to the description of craquelure patterns](https://arxiv.org)
 
@@ -17,8 +17,8 @@ Binarization of the crack images is very tricky and ungreatful process so we lea
 Run `main.m` for a fast start.
 </br>
 #### Output:
-![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_graph.jpg)
-![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_stats.jpg)
+![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/readme_imgs/img_graph.jpg)
+![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/readme_imgs/img_stats.jpg)
 
 </br></br>
 
@@ -69,20 +69,20 @@ For example:
 1 3 0 1 2
 ```
 The block corespond to graph which consist of 10 nodes and belongs to class 7. First (0) node has label 0 and has 3 neighbours; these neighbours are nodes 1, 2, and 9. The same can be applied to the next nodes.
-</br>
-</br>
-# Option 3. Merging the features and reproduction of the classification results from the paper.
+</br></br></br>
+
+# Option 3. Merging the features and reproduction of the classification results from the paper
 The final part where extracted features are used for classification of patterns.
 
 ### Technical details
-1. Use Option 2 to generate graph-features in advance or load proposed `stats.m` and `graph-features-263.m`.
+1. Use Option 2 to generate graph-features in advance or load proposed `stats.m` and `graph-features-263.m`
 2. Follow `classification.m`
 
 </br>
 
-![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_gnn.jpg)
+![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/readme_imgs/img_gnn.jpg)
 
 </br>
+
 *Please cite the paper if you find our algorithm useful.*
 #### Good luck with your experiments.
-</br>
