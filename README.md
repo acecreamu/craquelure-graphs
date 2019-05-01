@@ -37,13 +37,13 @@ networkx
 scipy
 ```
 ### Running the code
-As simple as
+As simple as:
 ```
 cd GNN
 python main.py --dataset CRACKS --lr 0.001 --epochs 10 --fold_idx 0
 ```
-The output is a .mat file `graph-features.mat` containing one variable of the size `[N_graphs x N_features]`.
-</br>
+The output is a .mat file `graph-features.mat` containing only one variable of a size `[N_graphs x N_features]`.
+
 ### Custom dataset
 If you want to use custom dataset run `createTXT.m` and move the output to `/dataset/CRACKS/`. </br>
 
@@ -70,7 +70,7 @@ For example:
 ```
 The block corespond to graph which consist of 10 nodes and belongs to class 7. First (0) node has label 0 and has 3 neighbours; these neighbours are nodes 1, 2, and 9. The same can be applied to the next nodes.
 </br>
-
+</br>
 # Option 3. Merging the features and reproduction of the classification results from the paper.
 The final part where extracted features are used for classification of patterns.
 
