@@ -1,6 +1,6 @@
 ![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_preview.jpg)
 
-Supporting code to the publication [TBA](https://arxiv.org)
+Supporting code to the publication [“The cracks that wanted to be a graph”: application of image processing and Graph Neural Networks to the description of craquelure patterns](https://arxiv.org)
 
 # Option 1. Extraction and characterization of craquelure patterns from an image
 
@@ -13,6 +13,8 @@ We thank [alchemyst](https://github.com/alchemyst/ternplot) and [phi-max](https:
 The code is written under MatLab R2017b, other versions haven't be tested. Unlikely anything but the Image Processing Toolbox is required. If you find any surprising dependency - please notify us.
 
 Binarization of the crack images is very tricky and ungreatful process so we leave it for a user's responsibility. (Although we provide a helper code `prepare_bw.m` which was used in our experiments (parameters are in filenames of the images)).
+
+Run `main.m` for a fast start.
 </br>
 #### Output:
 ![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_graph.jpg)
@@ -37,6 +39,7 @@ scipy
 ### Running the code
 As simple as
 ```
+cd GNN
 python main.py --dataset CRACKS --lr 0.001 --epochs 10 --fold_idx 0
 ```
 The output is a .mat file `graph-features.mat` containing one variable of the size `[N_graphs x N_features]`.
@@ -66,9 +69,14 @@ For example:
 1 3 0 1 2
 ```
 The block corespond to graph which consist of 10 nodes and belongs to class 7. First (0) node has label 0 and has 3 neighbours; these neighbours are nodes 1, 2, and 9. The same can be applied to the next nodes.
+</br>
 
+# Option 3. Merging the features and reproduction of the classification results from the paper.
+The final part where extracted features are used for classification of patterns.
 
-
+### Technical details
+1. Use Option 2 to generate graph-features in advance or load proposed `stats.m` and `graph-features-263.m`.
+2. Follow `classification.m`
 
 </br>
 
