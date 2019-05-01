@@ -2,7 +2,7 @@
 
 Supporting code to the publication [TBA](https://arxiv.org)
 
-# Option 1. Extraction and characterization of craquelure patterns from images
+# Option 1. Extraction and characterization of craquelure patterns from an image
 
 Taking a skeletonized binary image as an input, given algorithm extracts non-directed graph from a cracks pattern, classifies nodes by topology onto X, Y, and O types, fits edges with polynomial, and exports comprehensive characteristic of a craquelure pattern. The latter can be used for forgery detection, origin examination, aging monitoring, and damage identification.
 
@@ -21,8 +21,12 @@ Binarization of the crack images is very tricky and ungreatful process so we lea
 </br></br>
 
 # Option 2. Extraction of graph features using GNN
+
+The algorithm takes a banch of labeled graphs, uses them to train GNN, and then extracts a vector hidden features from the GNN's layers for each graph.
+
+### Technical details
 The implemention is based on [this algorithm by Xu *et al.*](https://github.com/weihua916/powerful-gnns). </br>
-Dependencies: 
+Requirements: 
 ```
 PyTorch
 tqdm
@@ -33,13 +37,12 @@ scipy
 ### Running the code
 As simple as
 ```
-chmod a+x run.sh
-./run.sh
+python main.py --dataset CRACKS --lr 0.001 --epochs 10 --fold_idx 0
 ```
 The output is a .mat file `graph-features.mat` containing one variable of the size `[N_graphs x N_features]`.
 </br>
 ### Custom dataset
-If you want to use custom dataset run `createTXT.m` and move it to `/dataset/CRACKS/`. </br>
+If you want to use custom dataset run `createTXT.m` and move the output to `/dataset/CRACKS/`. </br>
 
 The structure of the .txt is following:
 - each graph is a block
@@ -67,9 +70,11 @@ The block corespond to graph which consist of 10 nodes and belongs to class 7. F
 
 
 
-</br></br>
-*Please cite the paper if you find our algorithm useful.*
-#### Good luck with your experiments.
 </br>
 
 ![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/img_gnn.jpg)
+
+</br>
+*Please cite the paper if you find our algorithm useful.*
+#### Good luck with your experiments.
+</br>
