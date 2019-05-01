@@ -1,0 +1,1 @@
+python main.py --dataset CRACKS --lr 0.001 --epochs 100 --fold_idx 0
