@@ -24,13 +24,13 @@ Run `main.m` for a fast start.
 
 # Option 2. Extraction of graph features using GNN
 
-The algorithm takes a banch of labeled graphs, uses them to train GNN, and then extracts a vector hidden features from the GNN's layers for each graph.
+The algorithm takes a banch of labeled graphs, uses them to train GNN, and then extracts a vector of hidden features from the GNN's layers for each graph.
 
 ### Technical details
 The implemention is based on [this algorithm by Xu *et al.*](https://github.com/weihua916/powerful-gnns). </br>
 Requirements: 
 ```
-PyTorch
+pytorch
 tqdm
 numpy
 networkx
@@ -68,11 +68,11 @@ For example:
 0 3 5 6 7
 1 3 0 1 2
 ```
-The block corespond to graph which consist of 10 nodes and belongs to class 7. First (0) node has label 0 and has 3 neighbours; these neighbours are nodes 1, 2, and 9. The same can be applied to the next nodes.
+The block corespond to a graph which consist of 10 nodes and belongs to class 7. First (0) node has label 0 and has 3 neighbours; these neighbours are nodes 1, 2, and 9. The same can be applied to the next nodes.
 </br></br></br>
 
 # Option 3. Merging the features and reproduction of the classification results from the paper
-The final part where extracted features are used for classification of patterns.
+The final part where extracted features are combined and used for the classification of patterns.
 
 ### Technical details
 1. Use Option 2 to generate graph-features in advance or load proposed `stats.m` and `graph-features-263.m`
