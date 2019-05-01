@@ -24,10 +24,10 @@ Run `main.m` for a fast start.
 
 # Option 2. Extraction of graph features using GNN
 
-The algorithm takes a banch of labeled graphs, uses them to train GNN, and then extracts a vector of hidden features from the GNN's layers for each graph.
+The algorithm takes a bunch of labeled graphs, uses them to train GNN, and then extracts a vector of hidden features from the GNN's layers for each graph.
 
 ### Technical details
-The implemention is based on [this algorithm by Xu *et al.*](https://github.com/weihua916/powerful-gnns). </br>
+The implemention is based on [this algorithm by Xu *et al.*](https://github.com/weihua916/powerful-gnns) </br>
 Requirements: 
 ```
 pytorch
@@ -47,7 +47,7 @@ The output is a .mat file `graph-features.mat` containing only one variable of a
 ### Custom dataset
 If you want to use custom dataset run `createTXT.m` and move the output to `/dataset/CRACKS/`. </br>
 
-The structure of the .txt is following:
+The structure of the required .txt is following:
 - each graph is a block
 - first line of a block consist of *%number of nodes%* *%class label%*
 - each following line describes single node in a way: *%node label%* *%number of connected nodes%* *%connected node #1%* *%connected node #2%* *%connected node #3%*...
