@@ -80,7 +80,7 @@ The final part where extracted features are combined and used for the classifica
 
 </br>
 
-![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/readme_imgs/img_gnn.jpg)
+![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/readme_imgs/img_GNN.jpg)
 
 </br>
 
