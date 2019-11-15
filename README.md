@@ -1,6 +1,6 @@
 ![image preview](https://github.com/acecreamu/craquelure-graphs/blob/master/readme_imgs/img_preview.jpg)
 
-Supporting code to the publication [“The cracks that wanted to be a graph”: application of image processing and Graph Neural Networks to the description of craquelure patterns](https://arxiv.org)
+Supporting code to the publication [“The cracks that wanted to be a graph”: application of image processing and Graph Neural Networks to the description of craquelure patterns](https://arxiv.org/abs/1905.05010) published in ICCV 2019 Workshops.
 
 # Option 1. Extraction and characterization of craquelure patterns from an image
 
